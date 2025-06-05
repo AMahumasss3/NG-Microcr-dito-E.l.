@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NG Microcrédito,E.l. - Soluções Financeiras para o Seu Futuro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1e3a8a;
+            --secondary-color: #3b82f6;
+            --accent-color: #10b981;
+            --dark-color: #1f2937;
+            --light-color: #f8fafc;
+            --text-color: #374151;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
+            color: white;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="400" cy="400" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="600" cy="600" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="800" cy="300" r="2" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .stats-section {
+            background: var(--light-color);
+            padding: 80px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-color);
+            font-weight: 500;
+            margin-top: 10px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-color);
+            opacity: 0.3;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-color), #059669);
+            border: none;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+            background: linear-gradient(135deg, #059669, var(--accent-color));
+        }
+
+        .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+.footer {
+    background-color: var(--dark-color) !important;
+    color: white;
+}
+
+.footer h5 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: white;
+    color: var(--primary-color) !important;
+    transform: translateY(-3px);
+}
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+            
+            .feature-card {
+                margin-bottom: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-coins me-2"></i>NG Microcrédito,E.l.
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Sobre Nós</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testemunhos">Testemunhos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-light ms-2 px-3" href="#solicitar">Solicitar Crédito</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="display-4 fw-bold mb-4">Transforme os Seus Sonhos em Realidade</h1>
+                        <p class="lead mb-4">A NG Microcrédito,E.l. oferece soluções financeiras rápidas, seguras e acessíveis para pequenos empreendedores, funcionários públicos e privados em Moçambique.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="#servicos" class="btn btn-primary btn-lg">
+                                <i class="fas fa-hand-holding-usd me-2"></i>Nossos Serviços
+                            </a>
+                            <a href="#sobre" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-info-circle me-2"></i>Saiba Mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line" style="font-size: 15rem; opacity: 0.3;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+   <!-- Payment Conditions and Requirements Section -->
+<section id="condicoes" class="py-5">
+    <div class="container">
+        <h2 class="section-title">Condições de Pagamento e Requisitos</h2>
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0"><i class="fas fa-file-signature me-2"></i>Requisitos Necessários</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h5 class="text-primary"><i class="fas fa-user-check me-2"></i>Para Pessoas Singulares:</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Bilhete de Identidade válido</li>
+                                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>Bem de Garantia Real</li>
+                               
+                                
+                            </ul>
+                        </div>
+                        
+                     
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6 mb-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h4 class="mb-0"><i class="fas fa-hand-holding-usd me-2"></i>Condições de Pagamento</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <h5 class="text-success"><i class="fas fa-percentage me-2"></i>Termos Financeiros:</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Juros: 35%</li>
+                                <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Prazo: 30 dias</li>
+                                <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Valor mínimo: 5.000 MZN</li>
+                                <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Desembolso: em 1 hora</li>
+                                <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Montante mínimo: 5.000 MT</li>
+                                <li class="list-group-item"><i class="fas fa-info-circle text-info me-2"></i>Montante máximo: 500.000 MT</li>
+                            </ul>
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="alert alert-warning mt-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-exclamation-triangle fa-2x me-3"></i>
+                <div>
+                    <h5 class="mb-1">Importante:</h5>
+                    <p class="mb-0">Todos os pedidos estão sujeitos a análise e aprovação. Condições podem variar conforme perfil do cliente e política de crédito em vigor. Consulte nossos agentes para informações personalizadas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- About Section -->
+    <!-- Calculator Section -->
+    <section id="calculadora" class="py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <h3 class="text-center mb-4" style="color: var(--accent-color);">
+                                <i class="fas fa-calculator me-2"></i>Calcule seu Pagamento
+                            </h3>
+                            
+                            <form id="calculatorForm">
+                                <div class="mb-4">
+                                    <label for="loanAmount" class="form-label fw-semibold">Valor do Empréstimo (MZN):</label>
+                                    <input type="number" class="form-control form-control-lg" id="loanAmount" placeholder="Ex: 5000" min="1000" max="500000" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="delayDays" class="form-label fw-semibold">Dias de Atraso (após 30 dias):</label>
+                                    <input type="number" class="form-control form-control-lg" id="delayDays" placeholder="0" min="0" max="365">
+                                </div>
+                                
+                        
+                                
+                                <button type="button" class="btn btn-primary btn-lg w-100 mb-4" id="calculateBtn">
+                                    <i class="fas fa-calculator me-2"></i>Calcular
+                                </button>
+                            </form>
+                            
+                            <div id="calculatorResult" class="alert alert-info d-none">
+                                <h5 class="alert-heading">Resultado:</h5>
+                                <div id="resultContent">Digite os valores acima.</div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <a href="#contacto" class="btn btn-success btn-lg">
+                                    <i class="fas fa-paper-plane me-2"></i>Solicite seu Microcrédito
+                                </a>
+                            </div>
+                            
+                            <div class="mt-4 p-3 bg-light rounded">
+                                <h6 class="text-muted mb-2">
+                                    <i class="fas fa-info-circle me-2"></i>Informações Importantes:
+                                </h6>
+                                <ul class="list-unstyled small text-muted mb-0">
+                                    <li>• Taxa de juro mensal: 3% a 5%</li>
+                                    <li>• Taxa de abertura de processo: 2%</li>
+                                    <li>• Multa por atraso: 1% por dia após 30 dias</li>
+                                    <li>• Valores sujeitos a análise de crédito</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+   <!-- Services Section -->
+<section id="servicos" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center">Nossos Serviços</h2>
+        <div class="row">
+            <!-- Microcréditos -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Microcréditos</h3>
+                    <p class="lead">Oferecemos créditos rápidos e acessíveis para impulsionar seus projetos pessoais e profissionais.</p>
+                 
+                </div>
+            </div>
+            
+            <!-- Consultoria Financeira -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Consultoria Financeira</h3>
+                    <p class="lead">Auxiliamos na organização das suas finanças para garantir estabilidade e crescimento.</p>
+                 
+                </div>
+            </div>
+            
+            <!-- Educação Financeira -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Educação Financeira</h3>
+                    <p class="lead">Capacitamos nossos clientes com conhecimentos para uma vida financeira saudável.</p>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Testimonials Section -->
+  
+
+    <!-- CTA Section -->
+  
+    <!-- Contact Section -->
+    
+
+    <!-- Footer -->
+    <!-- Footer -->
+<!-- Footer -->
+<footer class="footer py-5" style="background-color: #1f2937;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-white mb-4">Contato</h5>
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2 text-primary"></i>
+                        <a href="mailto:bepmicrocredito@gmail.com" class="text-white">Nicrocredito@gmail.com</a>
+                    </li>
+                    <li class="mb-2">
+                        <i class="fas fa-map-marker-alt me-2 text-primary"></i>
+                        <span class="text-white">Rua José Mateus, nº 169 R/C - Maputo</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <h5 class="text-white mb-4">Fale Connosco no WhatsApp</h5>
+                <a href="https://wa.me/258XXXXXXXXX" class="btn btn-success">
+                    <i class="fab fa-whatsapp me-2"></i> WhatsApp
+                </a>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="text-lg-end">
+                    <div class="social-icons mb-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <p class="text-white mb-0">© 2025 NG Microcrédito,E.l. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.backgroundColor = 'rgba(30, 58, 138, 0.95)';
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+            }
+        });
+
+
+
+        </script>
+
+        <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const calculateBtn = document.getElementById("calculateBtn");
+    const loanAmountInput = document.getElementById("loanAmount");
+    const delayDaysInput = document.getElementById("delayDays");
+    const resultDiv = document.getElementById("calculatorResult");
+    const resultContent = document.getElementById("resultContent");
+
+    calculateBtn.addEventListener("click", function () {
+        const loanAmount = parseFloat(loanAmountInput.value);
+        const delayDays = parseInt(delayDaysInput.value);
+
+        if (isNaN(loanAmount) || loanAmount < 5000) {
+            resultDiv.classList.remove("alert-info");
+            resultDiv.classList.add("alert-danger");
+            resultContent.textContent = "O valor mínimo do empréstimo é 5.000 MZN.";
+            resultDiv.classList.remove("d-none");
+            return;
+        }
+
+        if (isNaN(delayDays) || delayDays < 0) {
+            resultDiv.classList.remove("alert-info");
+            resultDiv.classList.add("alert-danger");
+            resultContent.textContent = "Insira um número válido de dias de atraso.";
+            resultDiv.classList.remove("d-none");
+            return;
+        }
+
+        const fixedInterestRate = 0.35; // 35%
+        const delayInterestRatePerDay = 0.025; // 2.5%
+
+        const fixedInterest = loanAmount * fixedInterestRate;
+        const lateInterest = loanAmount * delayInterestRatePerDay * delayDays;
+
+        const total = loanAmount + fixedInterest + lateInterest;
+
+        resultDiv.classList.remove("alert-danger");
+        resultDiv.classList.add("alert-info");
+        resultContent.innerHTML = `
+            Valor do Empréstimo: <strong>${formatMZN(loanAmount)}</strong><br>
+            Juros Fixos (35%): <strong>${formatMZN(fixedInterest)}</strong><br>
+            Juros de Atraso (${delayDays} dias): <strong>${formatMZN(lateInterest)}</strong><br>
+            <hr>
+            <strong>Total a Pagar: ${formatMZN(total)}</strong>
+        `;
+        resultDiv.classList.remove("d-none");
+    });
+
+    function formatMZN(value) {
+        return value.toLocaleString("pt-PT", {
+            style: "currency",
+            currency: "MZN",
+            minimumFractionDigits: 2,
+        });
+    }
+});
+</script>
+
+
+
+   
